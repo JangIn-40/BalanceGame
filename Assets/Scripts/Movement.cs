@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float moveSpeed = 10f;
     void Start()
     {
         
@@ -14,9 +14,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
-            transform.position = Vector2.left;
+            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime); 
         }
     }
 }
